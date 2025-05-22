@@ -1,0 +1,21 @@
+terraform workspace dev
+terraform workspace select dev
+terraform plan -var-file='Environments/dev.tfvars'
+terraform apply -var-file='Environments/dev.tfvars'  
+terraform destroy -var-file='Environments/dev.tfvars'
+terraform refresh -var-file='Environments/dev.tfvars'
+
+az login 
+az account show
+terraform init
+terraform fmt
+terraform plan 
+terraform apply
+terraform plan -out='tfplan'
+terraform apply tfplan
+terraform console
+terraform apply -replace azurerm_linux_virtual_machine.tflinuxvm
+terraform state list
+terraform refresh
+ssh -i ~/.ssh/azurersa adminuser@13.71.122.48
+terraform destroy
